@@ -10,11 +10,6 @@ html {
   margin: 0;
 }
 
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
 :root {
 
   --Tomato: hsl(4, 100%, 67%);
@@ -54,6 +49,18 @@ p {
 }
 
 /* main */
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 23.5rem;
+}
+
 .card__content {
   display: flex;
   flex-direction: column;
@@ -185,3 +192,71 @@ form button {
 /* footer */
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+
+@media screen and (min-width: 48rem) {
+  body {
+    background-color: var(--Dark-Slate-Grey);
+  }
+  main {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+  }
+  .card {
+    flex-direction: row-reverse;
+    max-width: 52rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+    align-self: center;
+
+    .card__content {
+      max-width: 60%;
+      padding: 0 2.5rem;
+    }
+
+    .header-image-mobile {
+      display: none;
+    }
+
+    .header-image-desktop {
+      display: flex;
+      max-width: 45%;
+    }
+  }
+
+  .is-subscribed {
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: auto 0;
+    width: 27rem;
+    height: 27rem;
+    border-radius: 2rem;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem 3rem;
+    z-index: 20;
+
+    img {
+      margin-top: 1rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+  
+  }
+
+  .desktop-overlay-bg {
+    background-color: var(--Dark-Slate-Grey);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+  }
+  
+.attribution { font-size: 11px; text-align: center; color: white; }
+.attribution a { color: hsl(0, 0%, 59%); }
+}

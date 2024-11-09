@@ -4,6 +4,7 @@ const form = document.querySelector('form');
 const errorText = document.querySelector('.error-text');
 const dismissMess = document.querySelector('.dismiss-message')
 const isSubscribedOverlay = document.querySelector('.is-subscribed')
+const desktopOverlayBG = document.querySelector('.desktop-is-sub-bg')
 
 
 form.addEventListener('submit', (e) => {
@@ -23,6 +24,9 @@ form.addEventListener('submit', (e) => {
         <button class="dismiss-message">Dismiss Message</button>`;
 
     isSubscribedOverlay.classList.add('overlay')
+    if (window.innerWidth >= 768) {
+      desktopOverlayBG.classList.add('desktop-overlay-bg')
+    }
     
     form.reset();
     return false;
@@ -77,5 +81,6 @@ function checkEmail() {
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('dismiss-message')) {
     isSubscribedOverlay.classList.remove('overlay');
+    desktopOverlayBG.classList.remove('desktop-overlay-bg')
   }
 });
