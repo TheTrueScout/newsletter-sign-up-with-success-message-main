@@ -250,7 +250,7 @@ form button {
   }
 
   .desktop-overlay-bg {
-    background-color: var(--Dark-Slate-Grey);
+    background-color: var(--Charcoal-Grey);
     position: fixed;
     width: 100vw;
     height: 100vh;
